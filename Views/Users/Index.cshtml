@@ -1,0 +1,53 @@
+﻿@model UsersModel
+<form method="post" asp-controller="Users" asp-action="AddUser">
+    <div>
+        Name:
+        <input name="name">
+    </div>
+    <div>
+        Surname:
+        <input name="surname">
+    </div>
+    <div>
+        Age:
+        <input name="age" type="number">
+    </div>
+        <div>
+            Email:
+            <input name="email" type="email"/>
+        </div>
+    <div>
+        Gender:
+        <div>
+            <input type="radio" name="gender" value="Male">Male
+        </div>
+        <div>
+            <input type="radio" name="gender" value="Female">Female
+        </div>
+    </div>
+
+    <button type="submit">Send</button>
+</form>
+
+<table class="pure-table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Gender</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var user in Model.listusers)
+    {
+        <tr>
+            <td>@user.name</td>
+            <td>@user.surname</td>
+            <td>@user.age</td>
+            <td>@user.gender</td>
+        </tr>
+    }
+    </tbody>
+</table>
