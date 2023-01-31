@@ -8,8 +8,7 @@ public class Users : Controller
     // GET
     public IActionResult Index()
     {
-        
-        return View(listusers);
+        return View(new UsersModel());
     }
 
     // [HttpGet]
@@ -20,8 +19,8 @@ public class Users : Controller
     // }
     public IActionResult AddUser(User user)
     {
-        var listusers = new UsersModel();
-        listusers.AddUser(user);
+        var users = new UsersModel();
+        users.AddUser(user);
         return RedirectToAction("Index");
     }
 }

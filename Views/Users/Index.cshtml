@@ -12,10 +12,10 @@
         Age:
         <input name="age" type="number">
     </div>
-        <div>
-            Email:
-            <input name="email" type="email"/>
-        </div>
+    <div>
+        Email:
+        <input name="email" type="email"/>
+    </div>
     <div>
         Gender:
         <div>
@@ -36,10 +36,12 @@
         <th>Surname</th>
         <th>Age</th>
         <th>Gender</th>
+        <th>Email</th>
     </tr>
     </thead>
 
     <tbody>
+
     @foreach (var user in Model.listusers)
     {
         <tr>
@@ -47,7 +49,9 @@
             <td>@user.surname</td>
             <td>@user.age</td>
             <td>@user.gender</td>
+            <td>@user.email</td>
         </tr>
     }
+
     </tbody>
 </table>
